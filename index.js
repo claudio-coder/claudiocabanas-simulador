@@ -1,12 +1,12 @@
-const turnosCintya = [];
-const turnosEduardo = [];
-const turnosPatricia = [];
-const turnosDaniel = [];
-const turnosElvira = [];
-const turnosSilvina = [];
-const turnosAlejandra = [];
-const turnosLeonardo = [];
-const turnosSusana = [];
+let turnosCintya = [];
+let turnosEduardo = [];
+let turnosPatricia = [];
+let turnosDaniel = [];
+let turnosElvira = [];
+let turnosSilvina = [];
+let turnosAlejandra = [];
+let turnosLeonardo = [];
+let turnosSusana = [];
 
 const MAX_TURNOS = 5;
 const TIEMPO_TURNO = 15;
@@ -118,16 +118,54 @@ function anularTurno() {
     serviciosNoRepetidos.forEach((servicio, index) => {
         mensaje += `${index + 1} - ${servicio} \n`;
     })
-    reservaAnulada = prompt("Ingrese el ITEM a Anular", mensaje)
+    const reservaAnulada = prompt("Ingrese el ITEM a Anular", mensaje);
 
+    const reservaBajada = (reservaAnulada - 1);
 
+    const servicioAnulado = (serviciosNoRepetidos[reservaBajada]);
+
+    if (servicioAnulado === "Clínica general") {
+
+        turnosElvira = turnosElvira.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+
+    } else if (servicioAnulado === "Cirugía") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Medicina Holistica") {
+
+        turnosPatricia = turnosPatricia.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Metodos de Diagnostico") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Ecografias/Electrocardiogramas") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Oncología") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Exóticos") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Fisioterapia") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Farmacia") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+    } else if (servicioAnulado === "Baños y Peluqueria") {
+
+        turnosEduardo = turnosEduardo.filter(turnoNoAnulado => turnoNoAnulado.nombrePaciente !== nombrePaciente && turnoNoAnulado.nombreCliente !== nombreCliente);
+
+    }
 }
-
 setTimeout(() => {
+
     do {
         const opcion = prompt("Ingrese 1 para PEDIR TURNO o 2 para ANULAR");
         if (opcion === "1") {
+
             comenzarDiaLaboral();
+
         } else if (opcion === "2") {
             anularTurno();
         } else {
@@ -136,4 +174,4 @@ setTimeout(() => {
 
     }
     while (true)
-}, 5000)
+}, 500)

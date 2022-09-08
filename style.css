@@ -1,3 +1,41 @@
-body {
-    background-color: rgb(219, 169, 169);
+.servicios__opcion {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardservicios {
+    background-color: rgb(215, 172, 172);
+    color: black;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgb(170, 81, 81);
+    transition: transform 0.3s;
+
+}
+
+.cardimg {
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #b9747b;
+    text-align: center;
+    border-radius: 20px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicios__opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
